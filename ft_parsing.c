@@ -83,6 +83,6 @@ int	*ft_parse(char **argv)
 	pars = ft_assign(str, ' ', pars);
 	if (!pars || !ft_double(pars, counter))
 		return (free(str),free(pars), NULL);
-	pars[0] = counter;
+	pars[0] = counter - 1;
 	return (free(str), pars);
 }

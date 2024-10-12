@@ -20,16 +20,20 @@
 
 typedef struct s_list
 {
-	int			content;
+	int				content;
+	int				rank;
 	struct s_list	*next;
 }					t_list;
 
-t_list	*ft_lstlast(t_list *lst);
-int		ft_lstsize(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+typedef struct 
+{
+	t_list	*head;
+	t_list	*tail;
+	int		size;
+} f_list;
+
+
+t_list  *ft_set_a_b(int *numbers, f_list *a_list, f_list *b_list);
 
 int		dig(int c);
 int		ft_strlen(char *s);
@@ -40,5 +44,6 @@ int		ft_valid(char **argv, int i, int j, int flag);
 char	*ft_strjoin(char *str, char *c);
 
 void	ft_counter(char *s, char c, int *counter);
+void	ft_free_link(t_list *a_list);
 
 #endif
