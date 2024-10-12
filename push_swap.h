@@ -32,9 +32,6 @@ typedef struct
 	int		size;
 } f_list;
 
-
-t_list  *ft_set_a_b(int *numbers, f_list *a_list, f_list *b_list);
-
 int		dig(int c);
 int		ft_strlen(char *s);
 int		*ft_parse(char **argv);
@@ -44,6 +41,14 @@ int		ft_valid(char **argv, int i, int j, int flag);
 char	*ft_strjoin(char *str, char *c);
 
 void	ft_counter(char *s, char c, int *counter);
-void	ft_free_link(t_list *a_list);
+void 	ft_set_a_b(int *numbers, f_list *a_addrs, f_list *b_addrs);
+void	ft_sa(f_list *a_addrs, int print_ss);
+void	ft_sb(f_list *b_addrs, int print_ss);
+void	ft_ss(f_list *a_addrs, f_list *b_addrs);
+void    ft_pb(f_list *a_addrs, f_list *b_addrs);
+void    ft_pa(f_list *a_addrs, f_list *b_addrs);
+void    ft_ra(f_list *a_addrs, int print_rr);
+void    ft_rb(f_list *b_addrs, int print_rr);
+void	ft_free_link(f_list *list);
 
 #endif

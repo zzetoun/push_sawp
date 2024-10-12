@@ -11,15 +11,27 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+void	ft_print_stack(f_list *addrs)
+{
+	t_list *tmp = addrs->head;
+	int 	i;
+
+	printf("size: %d\n", addrs->size);
+	i = 1;
+	while (tmp)
+	{
+		printf("list[%d]: %d\n", i , tmp->content);
+		tmp = tmp->next;
+		i++;
+	}
+	i = 1;
+}
 
 int	main(int argc, char **argv)
 {
-	
-	t_list  *a_list;
 	f_list	a_addrs;
 	f_list	b_addrs;
 	int		*numbers;
-	int		i;
 
 	if (argc < 1 || !ft_valid(argv, 0, 0, 0))
 	{
@@ -32,16 +44,29 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	a_list = ft_set_a_b(numbers, &a_addrs, &b_addrs);
-	printf("size: %d\n",a_addrs.size);
-	i = 1;
-	while (a_list)
-	{
-			printf("list[%d]: %d\n", i , a_list->content);
-			a_list = a_list->next;
-			i++;
-	}
+	ft_set_a_b(numbers, &a_addrs, &b_addrs);
+	ft_pb(&a_addrs, &b_addrs);
+	ft_pb(&a_addrs, &b_addrs);
+	ft_pb(&a_addrs, &b_addrs);
+	ft_pb(&a_addrs, &b_addrs);
+	ft_pb(&a_addrs, &b_addrs);
+	printf("\nb list\n");
+	ft_print_stack(&b_addrs);
+
+	
+	ft_rb(&b_addrs, 0);
+	ft_rb(&b_addrs, 0);
+	ft_rb(&b_addrs, 0);
+	ft_rb(&b_addrs, 0);
+
+	printf("\nb list\n");
+	ft_print_stack(&b_addrs);
+
+
+	ft_free_link(&a_addrs);
+	ft_free_link(&b_addrs);
+
+
 	write(1, "\n", 1);
-	ft_free_link(a_list);
 	return (0);
 }

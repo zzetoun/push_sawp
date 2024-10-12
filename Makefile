@@ -2,7 +2,9 @@ SRCS	=	push_swap.c 		\
 			ft_parsing.c		\
 			pasring_utilites.c	\
 			list_utilities.c	\
-			stack_moves.c
+			swap_moves.c		\
+			push_moves.c		\
+			rotate_moves.c		
 
 OBJS	= ${SRCS:.c=.o}
 
