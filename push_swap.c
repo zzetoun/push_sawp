@@ -6,7 +6,7 @@
 /*   By: zzetoun <zzetoun@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:44:49 by zzetoun           #+#    #+#             */
-/*   Updated: 2024/09/05 11:44:50 by zzetoun          ###   ########.ae       */
+/*   Updated: 2024/10/12 11:44:50 by zzetoun          ###   ########.ae       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_print_stack(f_list *addrs)
 	t_list *tmp = addrs->head;
 	int 	i;
 
-	printf("size: %d\n", addrs->size);
+	printf("size: %d\n", addrs->size); 
 	i = 1;
 	while (tmp)
 	{
@@ -24,7 +24,7 @@ void	ft_print_stack(f_list *addrs)
 		tmp = tmp->next;
 		i++;
 	}
-	i = 1;
+	write(1, "\n", 1);
 }
 
 int	main(int argc, char **argv)
@@ -45,22 +45,28 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	ft_set_a_b(numbers, &a_addrs, &b_addrs);
-	ft_pb(&a_addrs, &b_addrs);
-	ft_pb(&a_addrs, &b_addrs);
-	ft_pb(&a_addrs, &b_addrs);
-	ft_pb(&a_addrs, &b_addrs);
-	ft_pb(&a_addrs, &b_addrs);
-	printf("\nb list\n");
-	ft_print_stack(&b_addrs);
-
-	
-	ft_rb(&b_addrs, 0);
-	ft_rb(&b_addrs, 0);
-	ft_rb(&b_addrs, 0);
-	ft_rb(&b_addrs, 0);
+	printf("\na list\n");
+	ft_print_stack(&a_addrs);
+	ft_pb(&a_addrs,&b_addrs);
+	ft_pb(&a_addrs,&b_addrs);
+	ft_pb(&a_addrs,&b_addrs);
 
 	printf("\nb list\n");
 	ft_print_stack(&b_addrs);
+
+	ft_rrb(&b_addrs, 0);
+	printf("\nb list\n");
+	ft_print_stack(&b_addrs);
+
+	ft_rra(&a_addrs, 0);
+	printf("\na list\n");
+	ft_print_stack(&a_addrs);
+
+	ft_rrr(&a_addrs, &b_addrs);
+	printf("\nb list\n");
+	ft_print_stack(&b_addrs);
+	printf("\na list\n");
+	ft_print_stack(&a_addrs);
 
 
 	ft_free_link(&a_addrs);

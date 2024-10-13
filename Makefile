@@ -4,7 +4,8 @@ SRCS	=	push_swap.c 		\
 			list_utilities.c	\
 			swap_moves.c		\
 			push_moves.c		\
-			rotate_moves.c		
+			rotate_moves.c		\
+			rrotate_moves.c	
 
 OBJS	= ${SRCS:.c=.o}
 

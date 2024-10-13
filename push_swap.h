@@ -6,7 +6,7 @@
 /*   By: zzetoun <zzetoun@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:46:54 by zzetoun           #+#    #+#             */
-/*   Updated: 2024/09/05 11:46:55 by zzetoun          ###   ########.ae       */
+/*   Updated: 2024/10/12 11:46:55 by zzetoun          ###   ########.ae       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ void    ft_pb(f_list *a_addrs, f_list *b_addrs);
 void    ft_pa(f_list *a_addrs, f_list *b_addrs);
 void    ft_ra(f_list *a_addrs, int print_rr);
 void    ft_rb(f_list *b_addrs, int print_rr);
+void    ft_rr(f_list *a_addrs, f_list *b_addrs);
+void    ft_rra(f_list *a_addrs, int print_rr);
+void    ft_rrb(f_list *b_addrs, int print_rr);
+void    ft_rrr(f_list *a_addrs, f_list *b_addrs);
 void	ft_free_link(f_list *list);
 
 #endif
