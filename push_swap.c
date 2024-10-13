@@ -44,13 +44,16 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	ft_set_a_b(numbers, &a_addrs, &b_addrs);
+	ft_set_a_b(0, numbers, &a_addrs, &b_addrs);
+	printf("max in:%d \nmin is:%d \n", a_addrs.max, a_addrs.min);
 	printf("\na list\n");
 	ft_print_stack(&a_addrs);
 	ft_pb(&a_addrs,&b_addrs);
 	ft_pb(&a_addrs,&b_addrs);
 	ft_pb(&a_addrs,&b_addrs);
-
+	
+	printf("\na list\n");
+	ft_print_stack(&a_addrs);
 	printf("\nb list\n");
 	ft_print_stack(&b_addrs);
 
@@ -63,10 +66,10 @@ int	main(int argc, char **argv)
 	ft_print_stack(&a_addrs);
 
 	ft_rrr(&a_addrs, &b_addrs);
-	printf("\nb list\n");
-	ft_print_stack(&b_addrs);
 	printf("\na list\n");
 	ft_print_stack(&a_addrs);
+	printf("\nb list\n");
+	ft_print_stack(&b_addrs);
 
 
 	ft_free_link(&a_addrs);

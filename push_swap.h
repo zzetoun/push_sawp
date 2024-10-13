@@ -21,7 +21,7 @@
 typedef struct s_list
 {
 	int				content;
-	int				rank;
+	int				idx;
 	struct s_list	*next;
 }					t_list;
 
@@ -29,6 +29,8 @@ typedef struct
 {
 	t_list	*head;
 	t_list	*tail;
+	int		max;
+	int		min;
 	int		size;
 } f_list;
 
@@ -37,11 +39,14 @@ int		ft_strlen(char *s);
 int		*ft_parse(char **argv);
 int		*ft_assign(char *str, char c, int *sp_str);
 int		ft_valid(char **argv, int i, int j, int flag);
+int		ft_get_idx(f_list *addrs ,int content);
 
 char	*ft_strjoin(char *str, char *c);
 
 void	ft_counter(char *s, char c, int *counter);
-void 	ft_set_a_b(int *numbers, f_list *a_addrs, f_list *b_addrs);
+void 	ft_set_a_b(int i, int *num, f_list *a_addrs, f_list *b_addrs);
+void    ft_max_min(f_list *addrs);
+void    ft_indxing(f_list *addrs);
 void	ft_sa(f_list *a_addrs, int print_ss);
 void	ft_sb(f_list *b_addrs, int print_ss);
 void	ft_ss(f_list *a_addrs, f_list *b_addrs);

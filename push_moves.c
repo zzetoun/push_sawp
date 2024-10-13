@@ -24,6 +24,8 @@ void    ft_pa(f_list *a_addrs, f_list *b_addrs)
     b_addrs->head = b_list;
     b_addrs->size--;
     a_addrs->size++;
+    ft_max_min(a_addrs);
+    ft_indxing(a_addrs);
     write(1,"pa\n",3);
 }
 
@@ -46,5 +48,7 @@ void    ft_pb(f_list *a_addrs, f_list *b_addrs)
             b_addrs->tail = a_list;
         a_list = a_list->next;
     }
+    ft_max_min(b_addrs);
+    ft_indxing(b_addrs);
     write(1,"pb\n",3);
 }
