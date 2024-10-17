@@ -21,7 +21,7 @@ ifeq ($(OS), Windows_NT)
     RM = del /Q > nul 2>&1
 	NAME = push_swap.exe
 endif
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -g -O0
 
 all: ${NAME}
 

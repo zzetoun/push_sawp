@@ -23,7 +23,7 @@ typedef struct s_list
 	int				num;
 	int				idx;
 	struct s_list	*next;
-}					t_list;
+}	t_list;
 
 typedef struct 
 {
@@ -47,7 +47,7 @@ int		ft_cal_rotate_ab(f_list *a_addrs, f_list *b_addrs);
 int		ft_cal_rarb_a(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rrarb_a(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rarrb_a(f_list *a_addrs, f_list *b_addrs, int num);
-int		ft_cal_rrarrb_a(f_list *a_addrs, f_list *b_addrs, int num);
+int		ft_cal_rrarrb_a(f_list *a_d, f_list *b_d, int num);
 int		ft_cal_rotate_ba(f_list *a_addrs, f_list *b_addrs);
 int		ft_cal_rarb_b(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rrarb_b(f_list *a_addrs, f_list *b_addrs, int num);
@@ -75,9 +75,9 @@ void    ft_rr(f_list *a_addrs, f_list *b_addrs);
 void    ft_rra(f_list *a_addrs, int print);
 void    ft_rrb(f_list *b_addrs, int print);
 void    ft_rrr(f_list *a_addrs, f_list *b_addrs);
-void    ft_sort_is_three(f_list *a_addrs);
 void    ft_sort_a(f_list *a_addrs, f_list *b_addrs);
 void    ft_sort_b(f_list *a_addrs, f_list *b_addrs);
+void    ft_sort_is_three(f_list *a_addrs);
 void	ft_sort_final(f_list *a_addrs, f_list *b_addrs);
 void    ft_sort_b_three(f_list *a_addrs, f_list *b_addrs);
 void	ft_free_link(f_list *addrs);

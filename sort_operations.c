@@ -15,22 +15,22 @@
 void    ft_sort_b_three(f_list *a_addrs, f_list *b_addrs)
 {
     t_list  *list;
-    int     type;
+    int     cost;
 
     while (a_addrs->size > 3 && !ft_is_sorted(a_addrs))
     {
         list = a_addrs->head;
-        type = ft_cal_rotate_ba(a_addrs, b_addrs);
-        while (type >= 0)
-        {
-            if (type == ft_cal_rarb_b(a_addrs, b_addrs, list->num))
-                type = ft_go_rarb(a_addrs, b_addrs, list->num, 'a');
-            else if (type == ft_cal_rrarrb_b(a_addrs, b_addrs, list->num))
-                type = ft_go_rrarrb(a_addrs, b_addrs, list->num, 'a');
-            else if (type == ft_cal_rrarrb_b(a_addrs, b_addrs, list->num))
-                type = ft_go_rarrb(a_addrs, b_addrs, list->num, 'a');
-            else if (type == ft_cal_rrarb_b(a_addrs, b_addrs, list->num))
-                type = ft_go_rrarb(a_addrs, b_addrs, list->num, 'a');
+        cost = ft_cal_rotate_ab(a_addrs, b_addrs);
+        while (cost >= 0)
+        {       
+            if (cost == ft_cal_rarb_b(a_addrs, b_addrs, list->num))
+                cost = ft_go_rarb(a_addrs, b_addrs, list->num, 'a');
+            else if (cost == ft_cal_rrarrb_b(a_addrs, b_addrs, list->num))
+                cost = ft_go_rrarrb(a_addrs, b_addrs, list->num, 'a');
+            else if (cost == ft_cal_rarrb_b(a_addrs, b_addrs, list->num))
+                cost = ft_go_rarrb(a_addrs, b_addrs, list->num, 'a');
+            else if (cost == ft_cal_rrarb_b(a_addrs, b_addrs, list->num))
+                cost = ft_go_rrarb(a_addrs, b_addrs, list->num, 'a');
             else
                 list = list->next;
             
@@ -77,10 +77,12 @@ void    ft_sort_b(f_list *a_addrs, f_list *b_addrs)
 void    ft_sort_a(f_list *a_addrs, f_list *b_addrs)
 {
     t_list  *list;
+    t_list  *b_list;
     int     type;
 
     list = b_addrs->head;
-    while (list)
+    b_list = list;
+    while (b_list)
     {
         list = b_addrs->head;
         type = ft_cal_rotate_ba(a_addrs, b_addrs);
@@ -97,6 +99,7 @@ void    ft_sort_a(f_list *a_addrs, f_list *b_addrs)
             else
                 list = list->next;
         }
+        b_list = b_addrs->head;
     }
 }
 

@@ -35,15 +35,15 @@ int	ft_cal_rrarb_b(f_list *a_addrs, f_list *b_addrs, int num)
 
 int	ft_cal_rrarrb_b(f_list *a_addrs, f_list *b_addrs, int num)
 {
-	int	idx;
+	int	a_cost;
+	int	b_cost;
 
-	idx = 0;
-	if (ft_idx_num_b(b_addrs, num))
-		idx = b_addrs->size - ft_idx_num_b(b_addrs, num);
-	if ((idx < a_addrs->size - ft_get_idx(a_addrs, num)) 
-			&& ft_get_idx(a_addrs, num))
-		idx = a_addrs->size - ft_get_idx(a_addrs, num);
-	return (idx);
+	a_cost = a_addrs->size - ft_get_idx(a_addrs, num);
+	b_cost = b_addrs->size - ft_idx_num_b(b_addrs, num);
+	if (a_cost > b_cost)
+		return (a_cost);
+	else
+		return (b_cost);
 }
 
 int	ft_cal_rarrb_b(f_list *a_addrs, f_list *b_addrs, int num)
@@ -60,21 +60,21 @@ int	ft_cal_rarrb_b(f_list *a_addrs, f_list *b_addrs, int num)
 int	ft_cal_rotate_ab(f_list *a_addrs, f_list *b_addrs)
 {
 	t_list	*list;
-	int		idx;
+	int		cost;
 
 	list = a_addrs->head;
-	idx = ft_cal_rrarrb_b(a_addrs, b_addrs, list->num);
+	cost = ft_cal_rrarrb_b(a_addrs, b_addrs, list->num);
 	while (list)
 	{
-		if (idx > ft_cal_rarb_b(a_addrs, b_addrs, list->num))
-			idx = ft_cal_rarb_b(a_addrs, b_addrs, list->num);
-		if (idx > ft_cal_rrarrb_b(a_addrs, b_addrs, list->num))
-			idx = ft_cal_rrarrb_b(a_addrs, b_addrs, list->num);
-		if (idx > ft_cal_rarrb_b(a_addrs, b_addrs, list->num))
-			idx = ft_cal_rarrb_b(a_addrs, b_addrs, list->num);
-		if (idx > ft_cal_rrarb_b(a_addrs, b_addrs, list->num))
-			idx = ft_cal_rrarb_b(a_addrs, b_addrs, list->num);
+		if (cost > ft_cal_rarb_b(a_addrs, b_addrs, list->num))
+			cost = ft_cal_rarb_b(a_addrs, b_addrs, list->num);
+		if (cost > ft_cal_rrarrb_b(a_addrs, b_addrs, list->num))
+			cost = ft_cal_rrarrb_b(a_addrs, b_addrs, list->num);
+		if (cost > ft_cal_rarrb_b(a_addrs, b_addrs, list->num))
+			cost = ft_cal_rarrb_b(a_addrs, b_addrs, list->num);
+		if (cost > ft_cal_rrarb_b(a_addrs, b_addrs, list->num))
+			cost = ft_cal_rrarb_b(a_addrs, b_addrs, list->num);
 		list = list->next;
 	}
-	return (idx);
+	return (cost);
 }

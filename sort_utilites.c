@@ -18,7 +18,6 @@ int	ft_idx_num_b(f_list *b_addrs, int push)
 	t_list	*list2;
 	int		idx;
 
-	list = b_addrs->head;
 	idx = 1;
 	if (push > b_addrs->head->num && push < b_addrs->tail->num)
 		idx = 0;
@@ -26,10 +25,11 @@ int	ft_idx_num_b(f_list *b_addrs, int push)
 		idx = ft_get_idx(b_addrs, b_addrs->max);
 	else
 	{
-		list2 = list->next;
+		list = b_addrs->head;
+		list2 = b_addrs->head->next;
 		while (list->num < push || list2->num > push)
 		{
-			list = list2;
+			list = list->next;
 			list2 = list2->next;
 			idx++;
 		}
@@ -51,11 +51,12 @@ int	ft_idx_num_a(f_list *a_addrs, int push)
 		idx = ft_get_idx(a_addrs, a_addrs->min);
 	else
 	{
-		list2 = a_addrs->head->next;
-		while (list->num > push || list2->num < push)
+		list2 = list->next;
+		while (list->next && (list->num > push || list2->num < push))
 		{
 			list = list->next;
-			list2 = list2->next;
+			if (list)
+				list2 = list->next;
 			idx++;	
 		}
 	}

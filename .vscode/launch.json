@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch push_swap",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/push_swap.exe",
+            "args": ["1685 7391 -6133 4711 9484 3228 2953 -2657 1207 -425 8212 535 1129 2614 -8758 -9639 3560 5112 6550 3988 6488 4162 9423 5823 -992 -8434 -193 6224 -68 -8616 -3916 2111 8742 1636 9365 9728 1213 -3701 1504 6465"],
+            "cwd": "D:/42/push_swap",
+            "stopAtEntry": true,
+            "environment": [],
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/MinGW/bin/gdb.exe"  // Ensure this is the correct path to gdb
+        }
+    ]
+}

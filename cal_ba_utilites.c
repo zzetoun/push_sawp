@@ -33,17 +33,16 @@ int	ft_cal_rrarb_a(f_list *a_addrs, f_list *b_addrs, int num)
 	return (idx);
 }
 
-int	ft_cal_rrarrb_a(f_list *a_addrs, f_list *b_addrs, int num)
+int	ft_cal_rrarrb_a(f_list *a_d, f_list *b_d, int num)
 {
-	int	idx;
+	int	
 
-	idx = 0;
-	if (ft_idx_num_a(a_addrs, num))
-		idx = a_addrs->size - ft_idx_num_a(a_addrs, num);
-	if ((idx < (b_addrs->size - ft_get_idx(b_addrs, num)))
-		&& ft_get_idx(b_addrs, num))
-		idx = b_addrs->size - ft_get_idx(b_addrs, num);
-	return (idx);
+	i = 0;
+	if (ft_idx_num_a(a_d, num))
+		i = a_d->size - ft_idx_num_a(a_d, num);
+	if ((i < (b_d->size - ft_get_idx(b_d, num))) && ft_get_idx(b_d, num))
+		i = b_d->size - ft_get_idx(b_d, num);
+	return (i);
 }
 
 int	ft_cal_rarrb_a(f_list *a_addrs, f_list *b_addrs, int num)

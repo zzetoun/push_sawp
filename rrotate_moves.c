@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    ft_rra(f_list *a_addrs, int print_rr)
+void    ft_rra(f_list *a_addrs, int print)
 {
     t_list  *a_list;
 
@@ -24,14 +24,16 @@ void    ft_rra(f_list *a_addrs, int print_rr)
     a_list->next = NULL;
     a_addrs->tail = a_list;
     ft_indxing(a_addrs);
-    if(print_rr != 1)
+    if(print != 1)
         write(1,"rra\n",4);
 }
 
-void    ft_rrb(f_list *b_addrs, int print_rr)
+void    ft_rrb(f_list *b_addrs, int print)
 {
     t_list  *b_list;
 
+    if (b_addrs->size == 1)
+        return ;
     b_list = b_addrs->head;
     while (b_list->next != b_addrs->tail)
         b_list = b_list->next;
@@ -40,7 +42,7 @@ void    ft_rrb(f_list *b_addrs, int print_rr)
     b_list->next = NULL;
     b_addrs->tail = b_list;
     ft_indxing(b_addrs);
-    if(print_rr != 1)
+    if(print != 1)
         write(1,"rrb\n",4);
 }
 
