@@ -14,15 +14,13 @@
 void	ft_print_stack(f_list *addrs)
 {
 	t_list *tmp = addrs->head;
-	int 	i;
 
 	printf("size: %d\n", addrs->size); 
-	i = 1;
+	printf("max is:%d \nmin is:%d \n", addrs->max, addrs->min);
 	while (tmp)
 	{
-		printf("list[%d]: %d\n", i , tmp->content);
+		printf("list[%d] list->idx[%d]: %d\n",ft_get_idx(addrs, tmp->num) ,tmp->idx , tmp->num);
 		tmp = tmp->next;
-		i++;
 	}
 	write(1, "\n", 1);
 }
@@ -45,33 +43,10 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	ft_set_a_b(0, numbers, &a_addrs, &b_addrs);
-	printf("max in:%d \nmin is:%d \n", a_addrs.max, a_addrs.min);
-	printf("\na list\n");
+	if (!ft_is_sorted(&a_addrs))
+	 	ft_sort_final(&a_addrs, &b_addrs);
 	ft_print_stack(&a_addrs);
-	ft_pb(&a_addrs,&b_addrs);
-	ft_pb(&a_addrs,&b_addrs);
-	ft_pb(&a_addrs,&b_addrs);
-	
-	printf("\na list\n");
-	ft_print_stack(&a_addrs);
-	printf("\nb list\n");
 	ft_print_stack(&b_addrs);
-
-	ft_rrb(&b_addrs, 0);
-	printf("\nb list\n");
-	ft_print_stack(&b_addrs);
-
-	ft_rra(&a_addrs, 0);
-	printf("\na list\n");
-	ft_print_stack(&a_addrs);
-
-	ft_rrr(&a_addrs, &b_addrs);
-	printf("\na list\n");
-	ft_print_stack(&a_addrs);
-	printf("\nb list\n");
-	ft_print_stack(&b_addrs);
-
-
 	ft_free_link(&a_addrs);
 	ft_free_link(&b_addrs);
 

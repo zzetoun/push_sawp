@@ -1,11 +1,16 @@
 SRCS	=	push_swap.c 		\
-			ft_parsing.c		\
+			arg_parsing.c		\
 			pasring_utilites.c	\
 			list_utilities.c	\
 			swap_moves.c		\
 			push_moves.c		\
 			rotate_moves.c		\
-			rrotate_moves.c	
+			rrotate_moves.c		\
+			sort_utilites.c		\
+			sort_operations.c	\
+			cal_ab_utilites.c	\
+			cal_ba_utilites.c	\
+			go_rotate_push.c		
 
 OBJS	= ${SRCS:.c=.o}
 

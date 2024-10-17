@@ -23,6 +23,7 @@ void    ft_rra(f_list *a_addrs, int print_rr)
     a_addrs->head = a_addrs->tail;
     a_list->next = NULL;
     a_addrs->tail = a_list;
+    ft_indxing(a_addrs);
     if(print_rr != 1)
         write(1,"rra\n",4);
 }
@@ -38,6 +39,7 @@ void    ft_rrb(f_list *b_addrs, int print_rr)
     b_addrs->head = b_addrs->tail;
     b_list->next = NULL;
     b_addrs->tail = b_list;
+    ft_indxing(b_addrs);
     if(print_rr != 1)
         write(1,"rrb\n",4);
 }

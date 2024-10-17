@@ -12,19 +12,17 @@
 
 #include "push_swap.h"
 
-void	ft_free_link(f_list *list)
+void	ft_free_link(f_list *addrs)
 {
-	t_list *current;
+	t_list *list;
 	
-    if (!list->head)
-        return ;
-	current = list->head;
-	while (current)
+    list = addrs->head;
+	while (list)
 	{
-		current = current->next;
-        list->head->content = 0;
-		free(list->head);
-		list->head = current;
+		list = list->next;
+        addrs->head->num = 0;
+		free(addrs->head);
+		addrs->head = list;
 	}
 }
 
@@ -34,39 +32,51 @@ void    ft_indxing(f_list *addrs)
     int     idx;
 
     list = addrs->head;
-    idx = 1;
+    idx = 0;
+    if (list)
+        list->idx = idx;
     while (list)
     {
         list->idx = idx;
         list = list->next;
+        idx++;
     }
 }
 
-int ft_get_idx(f_list *addrs ,int content)
+int ft_get_idx(f_list *addrs ,int num)
 {
     t_list  *list;
 
     ft_indxing(addrs);
     list = addrs->head;
-    while (list && list->content != content)
+    while (list->next && list->num != num)
         list = list->next;
-    return(list->idx);
+    if (list->num == num)
+        return (list->idx);
+    else
+        return (0);
     
 }
 
 void    ft_max_min(f_list *addrs)
 {
     t_list  *list;
-
-    list = addrs->head;
-    addrs->max = list->content;
-    addrs->min = list->content;
-    while (list)
+    
+    if (addrs->size == 0)
     {
-        if (list->content > addrs->max)
-            addrs->max = list->content;
-        else if (list->content < addrs->min)
-            addrs->min = list->content;
+        addrs->max = 0;
+        addrs->min = 0;
+        return ;
+    }
+    list = addrs->head;
+    addrs->max = addrs->head->num;
+    addrs->min = addrs->head->num;
+    while (list && addrs->size > 1)
+    {
+        if (list->num > addrs->max)
+            addrs->max = list->num;
+        else if (list->num < addrs->min)
+            addrs->min = list->num;
         list = list->next;
     }
 }
@@ -83,8 +93,8 @@ void 	ft_set_a_b(int i, int *num, f_list *a_addrs, f_list *b_addrs)
 			return (ft_free_link(a_addrs));
         if (i == 1)
             a_addrs->head = new_node;
-        new_node->content = num[i];
-        new_node->idx = i;
+        new_node->num = num[i];
+        new_node->idx = i - 1;
         new_node->next = NULL;
         if (a_addrs->tail != NULL)
             a_addrs->tail->next = new_node;
