@@ -15,13 +15,9 @@ SRCS	=	push_swap.c 		\
 OBJS	= ${SRCS:.c=.o}
 
 NAME	= push_swap
-CC		= gcc
+CC		= cc
 RM		= rm -f
-ifeq ($(OS), Windows_NT)
-    RM = del /Q > nul 2>&1
-	NAME = push_swap.exe
-endif
-CFLAGS	= -Wall -Werror -Wextra -g -O0
+CFLAGS	= -Wall -Werror -Wextra -g3
 
 all: ${NAME}
 

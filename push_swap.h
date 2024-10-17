@@ -47,7 +47,7 @@ int		ft_cal_rotate_ab(f_list *a_addrs, f_list *b_addrs);
 int		ft_cal_rarb_a(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rrarb_a(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rarrb_a(f_list *a_addrs, f_list *b_addrs, int num);
-int		ft_cal_rrarrb_a(f_list *a_d, f_list *b_d, int num);
+int		ft_cal_rrarrb_a(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rotate_ba(f_list *a_addrs, f_list *b_addrs);
 int		ft_cal_rarb_b(f_list *a_addrs, f_list *b_addrs, int num);
 int		ft_cal_rrarb_b(f_list *a_addrs, f_list *b_addrs, int num);

@@ -6,7 +6,7 @@
 /*   By: zzetoun <zzetoun@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 18:27:56 by zzetoun           #+#    #+#             */
-/*   Updated: 2024/09/06 18:27:57 by zzetoun          ###   ########.ae       */
+/*   Updated: 2024/10/17 17:07:46 by zzetoun          ###   ########.ae       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int	ft_double(int *pars, int len)
 	int	j;
 
 	i = 1;
-	
 	while (i != len)
 	{
 		j = i + 1;
@@ -82,7 +81,7 @@ int	*ft_parse(char **argv)
 		return (free(str), NULL);
 	pars = ft_assign(str, ' ', pars);
 	if (!pars || !ft_double(pars, counter))
-		return (free(str),free(pars), NULL);
+		return (free(str), free(pars), NULL);
 	pars[0] = counter - 1;
 	return (free(str), pars);
 }
